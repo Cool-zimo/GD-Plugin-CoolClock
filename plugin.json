@@ -1,0 +1,10 @@
+{
+  "id": "cool-clock",
+  "name": "⏰ 炫酷时钟",
+  "description": "一个实时显示的数字时钟插件，支持多种主题",
+  "author": "Cool-zimo",
+  "version": "1.0.0",
+  "icon": "⏰",
+  "type": "plugin",
+  "file": "index.html"
+}

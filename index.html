@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>炫酷时钟</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:linear-gradient(135deg,#1a1a2e,#16213e);height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:monospace;color:#fff}
+.clock{font-size:64px;font-weight:bold;text-shadow:0 0 20px #4ade80;letter-spacing:4px}
+.date{font-size:18px;color:#94a3b8;margin-top:12px}
+.theme-btn{margin-top:24px;padding:8px 20px;border:1px solid #4ade80;background:none;color:#4ade80;border-radius:6px;cursor:pointer;font-size:13px}
+.theme-btn:hover{background:#4ade80;color:#000}
+</style>
+</head>
+<body>
+<div class="clock" id="clock">--:--:--</div>
+<div class="date" id="date">----年--月--日</div>
+<button class="theme-btn" onclick="toggleTheme()">切换主题</button>
+<script>
+let theme=0;
+const themes=[{c:'#4ade80',bg:'linear-gradient(135deg,#1a1a2e,#16213e)'},{c:'#f472b6',bg:'linear-gradient(135deg,#1e1b4b,#312e81)'},{c:'#fbbf24',bg:'linear-gradient(135deg,#451a03,#78350f)'}];
+function update(){const n=new Date();document.getElementById('clock').textContent=n.toLocaleTimeString('zh-CN',{hour12:false});document.getElementById('date').textContent=n.toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric',weekday:'long'})}
+function toggleTheme(){theme=(theme+1)%themes.length;document.body.style.background=themes[theme].bg;document.getElementById('clock').style.textShadow='0 0 20px '+themes[theme].c;document.querySelector('.theme-btn').style.borderColor=themes[theme].c;document.querySelector('.theme-btn').style.color=themes[theme].c}
+setInterval(update,1000);update();
+</script>
+</body>
+</html>
