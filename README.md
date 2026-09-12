@@ -1,3 +1,7 @@
+<div align="center">
+
+<img src="assets/icon-drive-192.png" width="96" alt="GitHub Drive">
+
 # GD-Plugin-CoolClock
 
 GitHub Drive 第三方插件示例 - 炫酷时钟
